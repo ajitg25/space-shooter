@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Shooter Tests</title>
+  <style>
+    body { background: #111; color: #fff; font-family: monospace; padding: 20px; }
+    .pass { color: #00ff88; }
+    .fail { color: #ff4444; }
+    h2 { color: #00e5ff; }
+    #summary { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+<h2>Space Shooter — Unit Tests</h2>
+<div id="output"></div>
+<div id="summary"></div>
+<script type="module">
+  import { KeyboardInput } from '../src/input.js';
+
+  const out = document.getElementById('output');
+  let passed = 0, failed = 0;
+
+  function assert(desc, condition) {
+    const el = document.createElement('div');
+    el.className = condition ? 'pass' : 'fail';
+    el.textContent = (condition ? '✓ ' : '✗ ') + desc;
+    out.appendChild(el);
+    condition ? passed++ : failed++;
+  }
+
+  // KeyboardInput tests
+  const input = new KeyboardInput();
+  assert('key not down initially', !input.isDown('Space'));
+  // simulate keydown
+  window.dispatchEvent(new KeyboardEvent('keydown', { code: 'Space' }));
+  assert('key down after keydown event', input.isDown('Space'));
+  window.dispatchEvent(new KeyboardEvent('keyup', { code: 'Space' }));
+  assert('key up after keyup event', !input.isDown('Space'));
+
+  const summary = document.getElementById('summary');
+  summary.style.color = failed === 0 ? '#00ff88' : '#ff4444';
+  summary.textContent = `${passed} passed, ${failed} failed`;
+</script>
+</body>
+</html>
