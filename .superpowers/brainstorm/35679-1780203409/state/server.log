@@ -1,0 +1,5 @@
+{"type":"server-started","port":55827,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:55827","screen_dir":"/Users/ajit.gupta/Documents/GitHub/interactive-game/.superpowers/brainstorm/35679-1780203409/content","state_dir":"/Users/ajit.gupta/Documents/GitHub/interactive-game/.superpowers/brainstorm/35679-1780203409/state"}
+{"type":"screen-added","file":"/Users/ajit.gupta/Documents/GitHub/interactive-game/.superpowers/brainstorm/35679-1780203409/content/game-type.html"}
+{"source":"user-event","type":"click","text":"B\n    \n      🕹️ Arcade / Action\n      Snake, Tetris, or platformer-style. Real-time movement, score chasing, increasing difficulty.","choice":"arcade","id":null,"timestamp":1780203444397}
+{"type":"screen-added","file":"/Users/ajit.gupta/Documents/GitHub/interactive-game/.superpowers/brainstorm/35679-1780203409/content/waiting-1.html"}
+{"type":"screen-added","file":"/Users/ajit.gupta/Documents/GitHub/interactive-game/.superpowers/brainstorm/35679-1780203409/content/game-design.html"}

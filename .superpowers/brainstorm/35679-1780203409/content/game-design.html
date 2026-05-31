@@ -1,0 +1,93 @@
+<h2>Space Shooter — Game Design</h2>
+<p class="subtitle">Browser-based, HTML5 Canvas, pixel/retro style</p>
+
+<div class="section">
+  <span class="label">Architecture</span>
+  <div class="mockup">
+    <div class="mockup-header">File Structure</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:13px;line-height:1.8">
+      <div>📁 interactive-game/</div>
+      <div style="padding-left:20px">📄 index.html &nbsp;&nbsp;&nbsp;— shell + canvas element</div>
+      <div style="padding-left:20px">📄 game.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— game loop, entities, input</div>
+      <div style="padding-left:20px">📄 sprites.js &nbsp;&nbsp;&nbsp;— pixel art drawn via Canvas API</div>
+      <div style="padding-left:20px">📄 styles.css &nbsp;&nbsp;&nbsp;— dark background, HUD font</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Game Loop</span>
+  <div class="mockup">
+    <div class="mockup-header">States & Flow</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:13px;line-height:2">
+      <span style="color:#f59e0b">MENU</span> → <span style="color:#34d399">PLAYING</span> → <span style="color:#60a5fa">WAVE CLEAR</span> → <span style="color:#a78bfa">BOSS</span> → <span style="color:#34d399">PLAYING</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f87171">GAME OVER</span> → MENU
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Entities</span>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="mockup">
+      <div class="mockup-header">Player Ship</div>
+      <div class="mockup-body" style="font-size:13px;line-height:1.7">
+        • Arrow keys / WASD to move<br>
+        • Spacebar to shoot<br>
+        • 3 lives, blinks on hit<br>
+        • Fires single shot (upgrades to spread shot at wave 3)
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">Enemies</div>
+      <div class="mockup-body" style="font-size:13px;line-height:1.7">
+        • 3 types: drone, fighter, kamikaze<br>
+        • Formation patterns per wave<br>
+        • Shoot back at player<br>
+        • Boss every 5 waves (multi-phase HP)
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">Pickups</div>
+      <div class="mockup-body" style="font-size:13px;line-height:1.7">
+        • Shield restore<br>
+        • Spread shot (temp)<br>
+        • Extra life (rare)<br>
+        • Score multiplier
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">Visuals</div>
+      <div class="mockup-body" style="font-size:13px;line-height:1.7">
+        • Scrolling star parallax bg<br>
+        • Pixel sprites (Canvas drawImage)<br>
+        • Explosion particle effects<br>
+        • Retro pixel font (Press Start 2P)
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Scoring</span>
+  <div class="mockup">
+    <div class="mockup-body" style="font-size:13px;line-height:1.8">
+      Drone: 100pts &nbsp;|&nbsp; Fighter: 250pts &nbsp;|&nbsp; Kamikaze: 150pts &nbsp;|&nbsp; Boss: 1000pts<br>
+      Wave clear bonus: wave × 500pts &nbsp;|&nbsp; Multiplier pickup: 2× for 10 seconds
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <span class="label">Waves</span>
+  <div class="mockup">
+    <div class="mockup-body" style="font-size:13px;line-height:1.8">
+      Wave 1–4: drones only, simple formations<br>
+      Wave 5: <strong>Boss #1</strong> — slow, 3 phases, shoots spread<br>
+      Wave 6–9: drones + fighters, more bullets<br>
+      Wave 10: <strong>Boss #2</strong> — faster, homing missiles<br>
+      Wave 11+: all enemy types, random formations
+    </div>
+  </div>
+</div>
